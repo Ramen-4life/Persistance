@@ -10,11 +10,13 @@ import SwiftData
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            NavigationLink("Task List", destination: taskListView())
+                .buttonStyle(.borderedProminent)
+                
+                
+            //NavigationLink("College List", destination: collegeListView())
+            //  .buttonStyle(.borderedProminent)
         }
         .padding()
     }
