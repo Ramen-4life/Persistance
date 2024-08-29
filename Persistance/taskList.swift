@@ -20,8 +20,8 @@ struct taskListView: View {
                 TextField("Enter new task here", text: $newTask)
                     .textFieldStyle(.roundedBorder)
                 Button(action: {
-                    let task = TaskList(task:newTask)
-                    
+                    let p = TaskList(task:newTask)
+               //     tasks.insert(p)
                     newTask = ""
                 }, label: {
                     Text("+")
