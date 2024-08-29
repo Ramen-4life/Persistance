@@ -16,15 +16,29 @@ struct taskListView: View {
     
     var body: some View {
         VStack {
-            TextField("Enter new task here", text: $newTask) {
-                newTask = ""
+            HStack {
+                TextField("Enter new task here", text: $newTask)
+                    .textFieldStyle(.roundedBorder)
+                Button(action: {
+                    let task = TaskList(task:newTask)
+                    
+                    newTask = ""
+                }, label: {
+                    Text("+")
+                })
             }
+            .padding()
             List {
                 ForEach(tasks) { currentTask in
-                    Text(currentTask.task)
+                    Button(action: {
+                        currentTask.task = ""
+                    }, label: {
+                        Text(currentTask.task)
+                    })
                 }
             }
         }
+        .padding()
     }
 }
 
