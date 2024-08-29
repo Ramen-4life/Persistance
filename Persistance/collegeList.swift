@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 struct collegeListView: View {
     var body: some View {
         VStack {
