@@ -20,21 +20,18 @@ struct taskListView: View {
                 TextField("Enter new task here", text: $newTask)
                     .textFieldStyle(.roundedBorder)
                 Button(action: {
-                    let p = TaskList(task:newTask)
-               //     tasks.insert(p)
+                    let task = TaskList(task: newTask)
+                    context.insert(task)
                     newTask = ""
                 }, label: {
                     Text("+")
                 })
+                .font(.largeTitle)
             }
             .padding()
             List {
                 ForEach(tasks) { currentTask in
-                    Button(action: {
-                        currentTask.task = ""
-                    }, label: {
-                        Text(currentTask.task)
-                    })
+                    Text(currentTask.task)
                 }
             }
         }

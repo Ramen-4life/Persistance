@@ -14,6 +14,8 @@ struct PersistanceApp: App {
             ContentView()
             taskListView()
                 .modelContainer(for: TaskList.self)
+                
+                
         }
     }
 }
