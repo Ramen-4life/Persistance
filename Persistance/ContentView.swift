@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  Persistance
-//
-//  Created by Quincy Alex on 8/27/24.
-//
 
 import SwiftUI
 import SwiftData
@@ -13,16 +7,11 @@ struct ContentView: View {
         Text("Persistance")
             .font(.custom("Georgia", size: 50))
             .fontDesign(.serif)
-            
         NavigationStack {
             NavigationLink("Task List", destination: taskListView())
                 .buttonStyle(.borderedProminent)
-            
             NavigationLink("College List", destination: collegeListView()) 
-                
-            
-      //    .buttonStyle(.borderedProminent)
-            
+          .buttonStyle(.borderedProminent)
         }
         .padding()
     }
@@ -30,8 +19,14 @@ struct ContentView: View {
 
 
 
-#Preview {
-    ContentView()
+
+@Model
+class TaskList {
+    var task: String
+    
+    init(task: String) {
+        self.task = task
+    }
 }
 
 

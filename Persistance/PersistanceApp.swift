@@ -12,10 +12,13 @@ struct PersistanceApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-            taskListView()
-                .modelContainer(for: TaskList.self)
-                
-                
+                .modelContainer(for:TaskList.self)
+
         }
+        
     }
+}
+#Preview {
+    ContentView()
+        .modelContainer(for:TaskList.self)
 }
