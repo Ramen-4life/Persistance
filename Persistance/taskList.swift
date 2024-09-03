@@ -24,14 +24,6 @@ struct taskListView: View {
                     context.insert(task)
                     newTask = ""
                 }
-                TextField("klfkls", text: $removeTask)
-                    .textFieldStyle(.roundedBorder)
-                Button("-") {
-                    let task = TaskList(task: removeTask)
-                    context.delete(task)
-                    removeTask = ""
-                }
-               
             }
             .padding()
             List {
@@ -47,8 +39,8 @@ struct taskListView: View {
     }
     func deleteDestinations(_ indexSet: IndexSet) {
         for index in indexSet {
-            let destination = tasks[index]
-            context.delete(destination)
+            let delete = tasks[index]
+            context.delete(delete)
         }
     }
 }
