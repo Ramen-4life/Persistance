@@ -11,7 +11,7 @@ struct ContentView: View {
             NavigationLink("Task List", destination: taskListView())
                 .buttonStyle(.borderedProminent)
             NavigationLink("College List", destination: collegeListView()) 
-          .buttonStyle(.borderedProminent)
+                .buttonStyle(.borderedProminent)
         }
         .padding()
     }
@@ -21,12 +21,21 @@ struct ContentView: View {
 
 
 @Model
-class TaskList {
+class TaskList   {
     var task: String
+    var collegeName: String
+    var collegePrice: Int
     
-    init(task: String) {
+    init(task: String, collegeName: String, collegePrice: Int) {
         self.task = task
+        self.collegeName = collegeName
+        self.collegePrice = collegePrice
     }
 }
 
+#Preview {
+    ContentView()
+        .modelContainer(for:TaskList.self)
+        
+}
 

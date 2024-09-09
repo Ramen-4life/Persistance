@@ -20,25 +20,15 @@ struct taskListView: View {
                 TextField("Enter new task here", text: $newTask)
                     .textFieldStyle(.roundedBorder)
                 Button("+") {
-                    let task = TaskList(task: newTask)
+                    let task = TaskList(task: newTask, collegeName: "", collegePrice: 0)
                     context.insert(task)
-                    newTask = ""
                 }
-                TextField("klfkls", text: $removeTask)
-                    .textFieldStyle(.roundedBorder)
-                Button("-") {
-                    let task = TaskList(task: removeTask)
-                    context.delete(task)
-                    removeTask = ""
-                }
-               
+                .padding()
+                
             }
-            .padding()
             List {
                 ForEach(tasks) { currentTask in
-                    
-                        
-                        Text(currentTask.task)
+                    Text(currentTask.task)
                 }
                 .onDelete(perform: deleteDestinations)
             }

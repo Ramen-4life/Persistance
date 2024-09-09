@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct PersistanceApp: App {
@@ -14,12 +13,13 @@ struct PersistanceApp: App {
         WindowGroup {
             ContentView()
                 .modelContainer(for:TaskList.self)
-
+                
         }
         
     }
 }
 #Preview {
-    ContentView()
-        .modelContainer(for:TaskList.self)
+   ContentView()
+        .modelContainer(for: TaskList.self, inMemory: true)
+        
 }
